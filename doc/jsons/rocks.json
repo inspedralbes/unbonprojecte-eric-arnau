@@ -1,0 +1,104 @@
+{
+    "stones": [
+        {
+            "name": "Piedra1",
+            "area": 20,
+            "weight": 0.5
+        },
+        {
+            "name": "Piedra2",
+            "area": 45,
+            "weight": 1.2
+        },
+        {
+            "name": "Piedra3",
+            "area": 90,
+            "weight": 2.8
+        },
+        {
+            "name": "Piedra4",
+            "area": 30,
+            "weight": 0.7
+        },
+        {
+            "name": "Piedra5",
+            "area": 60,
+            "weight": 1.5
+        },
+        {
+            "name": "Piedra6",
+            "area": 15,
+            "weight": 0.4
+        },
+        {
+            "name": "Piedra7",
+            "area": 50,
+            "weight": 1.0
+        },
+        {
+            "name": "Piedra8",
+            "area": 75,
+            "weight": 2.0
+        },
+        {
+            "name": "Piedra9",
+            "area": 40,
+            "weight": 1.1
+        },
+        {
+            "name": "Piedra10",
+            "area": 85,
+            "weight": 2.5
+        },
+        {
+            "name": "Piedra11",
+            "area": 25,
+            "weight": 0.6
+        },
+        {
+            "name": "Piedra12",
+            "area": 55,
+            "weight": 1.3
+        },
+        {
+            "name": "Piedra13",
+            "area": 70,
+            "weight": 1.8
+        },
+        {
+            "name": "Piedra14",
+            "area": 35,
+            "weight": 0.9
+        },
+        {
+            "name": "Piedra15",
+            "area": 80,
+            "weight": 2.2
+        },
+        {
+            "name": "Piedra16",
+            "area": 65,
+            "weight": 2.1
+        },
+        {
+            "name": "Piedra17",
+            "area": 22,
+            "weight": 0.8
+        },
+        {
+            "name": "Piedra18",
+            "area": 42,
+            "weight": 1.4
+        },
+        {
+            "name": "Piedra19",
+            "area": 95,
+            "weight": 3.0
+        },
+        {
+            "name": "Piedra20",
+            "area": 18,
+            "weight": 0.3
+        }
+    ]
+}
