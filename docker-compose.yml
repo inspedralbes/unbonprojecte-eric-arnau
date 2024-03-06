@@ -1,0 +1,17 @@
+version: '1'
+services:
+  apache:
+    image: httpd:2.4
+    ports:
+      - 8080:80
+    volumes:
+      - ./web:/usr/local/apache2/htdocs
+  php:
+    image: php:8.2-apache
+    ports:
+      - 8000:8000
+    volumes:
+      - ./back-laravel:/tmp
+    working_dir: /tmp
+    command: bash -c "php artisan serve --host 0.0.0.0"
+    
