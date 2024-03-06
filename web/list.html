@@ -11,7 +11,7 @@
     <label for="filter">Filtro por nombre</label><input type="text" name="filter" id="filter">
     <ul id="list">
         <script>
-            fetch('../jsons/rocks.json')
+            fetch('./jsons/rocks.json')
                 .then(response => response.json())
                 .then(response => {
                     let listOfRocks = response.rocks.sort((a, b) => {
@@ -48,7 +48,7 @@
                         listItems.forEach(function(item) {
                             const name = item.querySelector('div:first-child').innerHTML.toUpperCase();
                             if (name.includes(filterValue)) {
-                                item.style.display = 'list-itema';
+                                item.style.display = 'list-item';
                             } else {
                                 item.style.display = 'none';
                             }
