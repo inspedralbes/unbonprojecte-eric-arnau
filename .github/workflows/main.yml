@@ -1,0 +1,21 @@
+name: main
+
+on: [push]
+
+jobs:
+ Pujar-a-produccio-amb-SCP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtenint el codi del respositori
+        uses: actions/checkout@v4
+
+      - name: scp a produccio
+        run: |
+         
+          cd ./web
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/prod_key.pem
+          chmod 600 ~/prod_key.pem
+          cd ${{ github.workspace }}
+          scp -r -o stricthostkeychecking=no -o UserKnownHostsFile=/dev/null -i "~/prod_key.pem" ./web/* ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:/home/a20erigomvil/web/arnaueric.daw.inspedralbes.cat/public_html
+          
+      - run: echo " ${{ job.status }}."

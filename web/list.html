@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="filter">Filtro por nombre</label><input type="text" name="filter" id="filter">
+    <ul id="list">
+        <script>
+            fetch('./jsons/rocks.json')
+                .then(response => response.json())
+                .then(response => {
+                    let listOfRocks = response.rocks.sort((a, b) => {
+                        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+                        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+                        if (nameA < nameB) {
+                            return -1;
+                        }
+                        if (nameA > nameB) {
+                            return 1;
+                        }
+
+                        // names must be equal
+                        return 0;
+                    });
+                    for (let i = 0; i < listOfRocks.length; i++) {
+                        const li = document.createElement('li');
+                        const divName = document.createElement('div');
+                        const divArea = document.createElement('div');
+                        const divWeight = document.createElement('div');
+                        divName.innerHTML = "Nombre: " + listOfRocks[i].name;
+                        divArea.innerHTML = "Area: " + listOfRocks[i].area + "m2";
+                        divWeight.innerHTML = "Pes: " + listOfRocks[i].weight + "kg";
+                        li.appendChild(divName);
+                        li.appendChild(divArea);
+                        li.appendChild(divWeight);
+                        document.getElementById('list').appendChild(li);
+                    }
+
+                    // Filter the list based on input value
+                    document.getElementById('filter').addEventListener('input', function() {
+                        const filterValue = this.value.toUpperCase();
+                        const listItems = document.querySelectorAll('#list li');
+                        listItems.forEach(function(item) {
+                            const name = item.querySelector('div:first-child').innerHTML.toUpperCase();
+                            if (name.includes(filterValue)) {
+                                item.style.display = 'list-item';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        });
+                    });
+
+                });
+
+        </script>
+    </ul>
+</body>
+
+</html>
