@@ -11,7 +11,7 @@
     <label for="filter">Filtro por nombre</label><input type="text" name="filter" id="filter">
     <ul id="list">
         <script>
-            fetch('../doc/jsons/rocks.json')
+            fetch('../jsons/rocks.json')
                 .then(response => response.json())
                 .then(response => {
                     let listOfRocks = response.rocks.sort((a, b) => {
